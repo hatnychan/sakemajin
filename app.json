@@ -1,0 +1,8 @@
+{
+  "name": "sakemajin",
+  "description": "sakemajin",
+  "repository": "https://github.com/hatnychan/sakemajin",
+  "logo": "",
+  "keywords": ["node"],
+  "image": "heroku/nodejs"
+}
