@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  script(src="/socket.io/socket.io.js")
+  div
+    image(src="../images/304.png" width="300" height="300")
+    form(method="post" id="myForm" action="/room")
+      select(name="character")
+        option(value="" disabled selected style="display:none;") character
+        option(value="hatnychan") hatnychan
+        option(value="Qchan") Qchan
+      input(type="text" name="userName" placeholder="UserName" maxlength='20')
+      button(type="text" class="button") enter

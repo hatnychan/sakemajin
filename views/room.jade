@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  script(src="/socket.io/socket.io.js")
+  div Battle of Sakemajin
+    div(id="content")
+      div
+        image(id='player1' width="350" height="700")
+        div(id='player1Name')
+      div(id="content2")
+        div(id="countDown")
+        div(id="selected_sakemajin")
+          div
+            image(id='selected_sakemajin1' src="../images/unknown_icon.png" width="140" height="140")
+              div(id="power1") pow:
+          div
+            image(src="../images/vs.png" width="50" height="50")
+          div
+            image(id='selected_sakemajin2' src="../images/unknown_icon.png" width="140" height="140")
+              div(id="power2") pow:
+        div sakemajin
+        div
+          image(id="sakemajin1" src="../images/sakemajin1.png" width="70" height="70")
+          image(id="sakemajin2" src="../images/sakemajin2.png" width="70" height="70")
+          image(id="sakemajin3" src="../images/sakemajin3.png" width="70" height="70")
+        div(id="enchant") enchantment
+        div
+          image(id="enchant1" width="70" height="70")
+          image(id="enchant2" width="70" height="70")
+          image(id="enchant3" width="70" height="70")
+
+        form(id="nextGame")
+          input(type="hidden" value=userName id="userName")
+          input(type="hidden" value=character id="character")
+          button(type="text" class="button") next game
+        a(id="topPage" href="/") Top Page
+      div
+        image(id='player2' width="350" height="700")
+        div(id='player2Name')
+    div(id="dummy")
+    div(id="modal-main")
+      image(id="judge" width="500" height="300")
+    script(src="../javascripts/client_room.js")
