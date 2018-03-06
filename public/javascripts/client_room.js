@@ -1,7 +1,7 @@
 $(() => {
   'use strict';
-  const match = io.connect('http://192.168.33.10:8000/match');
-  // const match = io.connect('https://sakemajin.herokuapp.com/match');
+  // const match = io.connect('http://192.168.33.10:8000/match');
+  const match = io.connect('https://sakemajin.herokuapp.com/match');
   let userId = String(Math.floor(Math.random() * 1000000000));
   let userIds = {};
   let opponentId = '' ;
