@@ -1,7 +1,7 @@
 $(() => {
   'use strict';
-  // const match = io.connect('http://192.168.33.10:8000/match');
-  const match = io.connect('https://sakemajin.herokuapp.com/match');
+  const match = io.connect('http://192.168.33.10:8000/match');
+  // const match = io.connect('https://sakemajin.herokuapp.com/match');
   let userId = String(Math.floor(Math.random() * 1000000000));
   let userIds = {};
   let opponentId = '' ;
@@ -126,10 +126,13 @@ $(() => {
     $("#modal-bg,#modal-main").fadeIn("slow");
     if (data === "you win") {
       $("#judge").attr('src','../images/win.png');
+      sound('win');
     } else if (data === "you lose") {
       $("#judge").attr('src','../images/lose.png');
+      sound('lose');
     } else if (data === "draw") {
       $("#judge").attr('src','../images/draw.png');
+      sound('draw');
     }
 
     //画面のどこかをクリックしたらモーダルを閉じる
@@ -173,13 +176,13 @@ $(() => {
       profile: '[ハルトルニル・リルル・ニル]<br>お花の国からやってきた酒魔神使い。<br>太陽光を吸収して力に変換する機構を持つ。<br>-陽魔術 Lv3<br>-光合成 Lv5<br>-格闘術 Lv2<br>-挑発 Lv3<br>-魅了 Lv1<br>-感情起伏 Lv2<br>-種族差別 Lv2',
       enchant1: '[能力向上]<br>起動型能力:再使用時間0秒<br>酒魔神力を0.3%上昇させる。',
       enchant2: '[能力超向上]<br>起動型能力:再使用時間2秒<br>酒魔神力を3%上昇させる。',
-      enchant3: '[SunKissed]<br>常在型能力<br>"日中"且つ天気が"晴れ"である場合、<br>酒魔神力を2000%上昇させる。(工事中)'
+      enchant3: '[SunKissed]<br>常在型能力<br>"日中"且つ天気が"晴れ"である場合、<br>酒魔神力を3%上昇させる。(工事中)'
     },
     Qchan: {
       profile: '[Q]<br>闇の国からやってきた酒魔神使い。<br>視力はほとんど無いが優れた聴力を持つ。<br>-陰魔術 Lv2<br>-反響定位 Lv5<br>-絶対音感 Lv5<br>-屍霊術 Lv2<br>-吸血 Lv1<br>-魅了 Lv2<br>-感情起伏 Lv1<br>-種族差別 Lv1',
       enchant1: '[能力向上]<br>起動型能力:再使用時間0秒<br>酒魔神力を0.3%上昇させる。',
       enchant2: '[能力超向上]<br>起動型能力:再使用時間2秒<br>酒魔神力を3%上昇させる。',
-      enchant3: '[NachtMusik]<br>常在型能力<br>"夜"である場合、酒魔神力を1500%上昇させる。(工事中)'
+      enchant3: '[NachtMusik]<br>常在型能力<br>"夜"である場合、酒魔神力を3%上昇させる。(工事中)'
     },
     nochan: {
       profile: '[ノーフェイス]<br>屍の国からやってきた酒魔神使い。<br>顔の無い食屍鬼。<br>死体から引剥した顔を自分の顔に付けている。<br>-陰魔術 Lv4<br>-屍霊術 Lv3<br>-死体発掘 Lv3<br>-食屍術 Lv5<br>-防腐術 Lv3<br>-縫合 Lv3<br>-魅了 Lv3<br>-感情起伏 Lv0<br>-種族差別 Lv0',
@@ -224,7 +227,7 @@ $(() => {
   // sound settings
   function sound(soundFile) {
     var audio = new Audio(); // audioの作成
-    audio.src = `../sounds/${soundFile}.mp3`; // 音声ファイルの指定
+    audio.src = `../sounds/${soundFile}.ogg`; // 音声ファイルの指定
     audio.load(); // audioの読み込み
     audio.play(); // audioの再生
   }

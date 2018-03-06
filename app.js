@@ -29,6 +29,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(path.join(__dirname, 'favicon.ico')));
+// app.use('/favicon.ico', express.static('favicon.ico'));
 
 app.use('/', routes);
 app.use('/room', room);
@@ -197,7 +199,6 @@ const match = io.of('/match').on('connection', (socket) => {
       ) / 1000;
     }
     io.of('/match').to(socket.roomId).emit('setSakemajin', battleData[socket.roomId]);
-    console.log(battleData);
   });
 
   socket.on('setEnchant', (data) => {
