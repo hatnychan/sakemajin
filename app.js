@@ -32,6 +32,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(favicon(path.join(__dirname, 'favicon.ico')));
 app.use('/favicon.ico', express.static('favicon.ico'));
 
+app.use((req, res, next) => {
+  if (process.env.PORT && req.headers['x-forwarded-proto'] === 'http') {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  } else {
+    next();
+  }
+});
+
 app.use('/', routes);
 app.use('/room', room);
 

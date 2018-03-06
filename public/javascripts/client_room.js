@@ -158,11 +158,6 @@ $(() => {
     }
   });
 
-  var audio = new Audio(); // audioの作成
-  audio.src = `../sounds/gameStart.mp3`; // 音声ファイルの指定
-  audio.load(); // audioの読み込み
-  audio.play(); // audioの再生
-
   const tips = {
     "": {
       profile: '???'
@@ -185,7 +180,7 @@ $(() => {
       enchant3: '[NachtMusik]<br>常在型能力<br>"夜"である場合、酒魔神力を3%上昇させる。(工事中)'
     },
     nochan: {
-      profile: '[ノーフェイス]<br>屍の国からやってきた酒魔神使い。<br>顔の無い食屍鬼。<br>死体から引剥した顔を自分の顔に付けている。<br>-陰魔術 Lv4<br>-屍霊術 Lv3<br>-死体発掘 Lv3<br>-食屍術 Lv5<br>-防腐術 Lv3<br>-縫合 Lv3<br>-魅了 Lv3<br>-感情起伏 Lv0<br>-種族差別 Lv0',
+      profile: '[ノーフェイス(工事中)]<br>屍の国からやってきた酒魔神使い。<br>顔の無い食屍鬼。<br>死体から引剥した顔を自分の顔に付けている。<br>-陰魔術 Lv4<br>-屍霊術 Lv3<br>-死体発掘 Lv3<br>-食屍術 Lv5<br>-防腐術 Lv3<br>-縫合 Lv3<br>-魅了 Lv3<br>-感情起伏 Lv0<br>-種族差別 Lv0',
       enchant1: '[能力向上]<br>起動型能力:再使用時間0秒<br>酒魔神力を3%上昇させる。',
       enchant2: '[能力超向上]<br>起動型能力:再使用時間2秒<br>酒魔神力を300%上昇させる。',
       enchant3: '[DeadCatBounce]<br>常在型能力<br>"夜"である場合、酒魔神力を1500%上昇させる。',
