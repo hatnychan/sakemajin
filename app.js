@@ -236,7 +236,7 @@ const match = io.of('/match').on('connection', (socket) => {
         socket.opponentId = i;
       }
     }
-    battleData[socket.roomId] [socket.userId] ['count'] = 5 ;
+    battleData[socket.roomId] [socket.userId] ['count'] = 10 ;
     var countDown = () => {
       var id = setTimeout(countDown, 1000);
       if (Object.keys(battleData[socket.roomId]).length === 2) {
